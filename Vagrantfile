@@ -22,13 +22,13 @@ Vagrant::Config.run do |config|
           :version  => "9.1",
           :listen_addresses => "*",
           :pg_hba => [
-            "host all all 0.0.0.0/0 md5",
-            "host all all ::1/0 md5",
+            "host all all 0.0.0.0/0 trust",
+            "host all all ::1/0 trust",
           ],
           :users => [
             { :username => "postgres", :password => "password",
               :superuser => true, :login => true, :createdb => true }
-          ],
+          ]
         },
         :mongodb => {
             :package_version => "2.2.3"
